@@ -79,9 +79,6 @@ public class CategoryServiceImpl implements CategoryService {
         CategoryEO fetched = categoryRepo.findById(catId)
                 .orElseThrow(getExceptionSupplierCategory("ID", catId.toString()));
 
-        if (updateDto.getImageUrl() != null) {
-            fetched.setImageUrl(updateDto.getImageUrl());
-        }
         if (updateDto.getCategoryName() != null) {
             fetched.setCategoryName(updateDto.getCategoryName());
         }
